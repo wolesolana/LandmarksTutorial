@@ -32,4 +32,11 @@ struct Landmark: Codable, Hashable, Identifiable {
         var longitude: Double
         var latitude: Double
     }
+
+    var category: Category
+    enum Category: String, CaseIterable, Codable {
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+    }
 }
