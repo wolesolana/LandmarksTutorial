@@ -15,5 +15,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(LandmarkDataStore())
+        .environment(DataStore())
 }

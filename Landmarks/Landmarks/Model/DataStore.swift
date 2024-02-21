@@ -8,8 +8,9 @@
 import Foundation
 
 @Observable
-class LandmarkDataStore {
+class DataStore {
     var landmarks: [Landmark] = loadData(from: "landmarkData.json")
+    var hikes: [Hike] = loadData(from: "hikeData.json")
 }
 
 

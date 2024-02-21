@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LandmarkDetailView: View {
-    @Environment(LandmarkDataStore.self) var landmarkDataStore
+    @Environment(DataStore.self) var landmarkDataStore
     var landmark: Landmark
     var landmarkIndex: Int {
         landmarkDataStore.landmarks.firstIndex(where: { $0.id == landmark.id })!
@@ -49,7 +49,7 @@ struct LandmarkDetailView: View {
 }
 
 #Preview {
-    let landmarkDataStore: LandmarkDataStore = LandmarkDataStore()
+    let landmarkDataStore: DataStore = DataStore()
     return LandmarkDetailView(landmark: landmarkDataStore.landmarks[2])
         .environment(landmarkDataStore)
 }

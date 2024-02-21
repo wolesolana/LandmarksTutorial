@@ -25,7 +25,7 @@ struct LandmarkRowView: View {
 }
 
 #Preview {
-    let landmarks = LandmarkDataStore().landmarks
+    let landmarks = DataStore().landmarks
     return Group {
         LandmarkRowView(landmark: landmarks[0])
         LandmarkRowView(landmark: landmarks[1])

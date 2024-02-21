@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct LandmarksApp: App {
-    @State private var landmarkDataStore = LandmarkDataStore()
+    @State private var landmarkDataStore = DataStore()
     var body: some Scene {
         WindowGroup {
             ContentView()
