@@ -12,13 +12,27 @@ struct CategoryHomeView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(dataStore.categories.keys.sorted(), id: \.self) { category in
-                    Text(category)
-                        .navigationTitle("Featured")
+                dataStore.features[0].image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+                    .listRowInsets(EdgeInsets())
+
+                ForEach(
+                    dataStore.categories.keys.sorted(),
+                    id: \.self
+                ) { category in
+                    CategoryRowView(
+                        categoryName: category,
+                        items: dataStore.categories[category]!
+                    )
                 }
+                .listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
             }
+            .navigationTitle("Featured")
         } detail: {
-            Text("Detail")
+            Text("Select a Landmark")
         }
     }
 }

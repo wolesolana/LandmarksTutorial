@@ -16,6 +16,7 @@ struct Landmark: Codable, Hashable, Identifiable {
     var state: String
     var description: String
     var isFavorite: Bool
+    var isFeatured: Bool
 
     private var imageName: String
     var image: Image {

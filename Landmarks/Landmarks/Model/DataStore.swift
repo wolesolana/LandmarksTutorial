@@ -16,6 +16,9 @@ class DataStore {
                    by: { $0.category.rawValue }
         )
     }
+    var features: [Landmark] {
+        landmarks.filter { $0.isFeatured }
+    }
 }
 
 
