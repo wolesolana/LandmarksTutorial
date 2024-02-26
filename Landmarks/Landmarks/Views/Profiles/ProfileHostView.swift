@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct ProfileHostView: View {
-    @State private var draftProfile = Profile.default
+    @Environment(\.editMode) var editMode
+    @Environment(DataStore.self) var dataStore
 
     var body: some View {
-        VStack {
-            ProfileSummaryView(profile: draftProfile)
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                Spacer()
+                EditButton()
+            }
+            if editMode?.wrappedValue == .inactive {
+                ProfileSummaryView(profile: dataStore.profile)
+            } else {
+                Text("Profile Editor")
+            }
         }
         .padding()
     }
@@ -20,4 +29,5 @@ struct ProfileHostView: View {
 
 #Preview {
     ProfileHostView()
+        .environment(DataStore())
 }

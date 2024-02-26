@@ -11,6 +11,8 @@ import Foundation
 class DataStore {
     var landmarks: [Landmark] = loadData(from: "landmarkData.json")
     var hikes: [Hike] = loadData(from: "hikeData.json")
+    var profile = Profile.default
+
     var categories: [String : [Landmark]] {
         Dictionary(grouping: landmarks,
                    by: { $0.category.rawValue }
