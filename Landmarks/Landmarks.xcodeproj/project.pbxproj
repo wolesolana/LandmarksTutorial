@@ -41,6 +41,7 @@
 		0BBB809A2B8CF8D300E71E21 /* ProfileHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB80992B8CF8D300E71E21 /* ProfileHostView.swift */; };
 		0BBB809C2B8CF99700E71E21 /* ProfileSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB809B2B8CF99700E71E21 /* ProfileSummaryView.swift */; };
 		0BBB809E2B8D31D800E71E21 /* HikeBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB809D2B8D31D800E71E21 /* HikeBadgeView.swift */; };
+		0BBB80A02B8D3CF800E71E21 /* ProfileEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB809F2B8D3CF800E71E21 /* ProfileEditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		0BBB80992B8CF8D300E71E21 /* ProfileHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHostView.swift; sourceTree = "<group>"; };
 		0BBB809B2B8CF99700E71E21 /* ProfileSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummaryView.swift; sourceTree = "<group>"; };
 		0BBB809D2B8D31D800E71E21 /* HikeBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadgeView.swift; sourceTree = "<group>"; };
+		0BBB809F2B8D3CF800E71E21 /* ProfileEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 			children = (
 				0BBB80992B8CF8D300E71E21 /* ProfileHostView.swift */,
 				0BBB809B2B8CF99700E71E21 /* ProfileSummaryView.swift */,
+				0BBB809F2B8D3CF800E71E21 /* ProfileEditorView.swift */,
 			);
 			path = Profiles;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				0BBB807E2B8535B900E71E21 /* BadgeView.swift in Sources */,
 				0BBB807A2B85242F00E71E21 /* BadgeSymbol.swift in Sources */,
 				0BBB80352B7D2A4900E71E21 /* LandmarksApp.swift in Sources */,
+				0BBB80A02B8D3CF800E71E21 /* ProfileEditorView.swift in Sources */,
 				0BBB808E2B854D7300E71E21 /* HikeView.swift in Sources */,
 				0BBB806C2B7D9FC400E71E21 /* LandmarkRowView.swift in Sources */,
 				0BBB80782B851FE900E71E21 /* BadgeBackground.swift in Sources */,
