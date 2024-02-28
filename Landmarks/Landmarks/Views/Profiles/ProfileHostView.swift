@@ -15,6 +15,12 @@ struct ProfileHostView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
+                if editMode?.wrappedValue == .active {
+                    Button("Cancel", role: .cancel) {
+                        draftProfile = dataStore.profile
+                        editMode?.animation().wrappedValue = .inactive
+                    }
+                }
                 Spacer()
                 EditButton()
             }
@@ -22,6 +28,12 @@ struct ProfileHostView: View {
                 ProfileSummaryView(profile: dataStore.profile)
             } else {
                 ProfileEditorView(profile: $draftProfile)
+                    .onAppear {
+                        draftProfile = dataStore.profile
+                    }
+                    .onDisappear {
+                        dataStore.profile = draftProfile
+                    }
             }
         }
         .padding()
