@@ -14,11 +14,7 @@ struct CategoryHomeView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                dataStore.features[0].image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+                PageView(pages: dataStore.features.map { FeatureCardView(landmark: $0) })
                     .listRowInsets(EdgeInsets())
 
                 ForEach(
