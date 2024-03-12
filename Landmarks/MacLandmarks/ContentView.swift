@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LandmarksListView()
+        LandmarkListView()
             .frame(minWidth: 700, minHeight: 300)
     }
 }
