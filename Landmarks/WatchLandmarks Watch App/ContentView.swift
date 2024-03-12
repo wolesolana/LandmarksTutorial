@@ -10,7 +10,7 @@ import UserNotifications
 
 struct ContentView: View {
     var body: some View {
-        LandmarksListView()
+        LandmarkListView()
             .task {
                 let center = UNUserNotificationCenter.current()
                 _ = try? await center.requestAuthorization(

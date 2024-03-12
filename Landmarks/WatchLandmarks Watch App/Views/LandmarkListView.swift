@@ -1,13 +1,13 @@
 //
-//  LandmarksListView.swift
-//  Landmarks
+//  LandmarkListView.swift
+//  WatchLandmarks Watch App
 //
-//  Created by Wole Solana on 2/14/24.
+//  Created by Wole Solana on 3/12/24.
 //
 
 import SwiftUI
 
-struct LandmarksListView: View {
+struct LandmarkListView: View {
     @Environment(DataStore.self) var landmarkDataStore
     @State private var showFavoritesOnly: Bool = false
     var favoriteLandmarks: [Landmark] {
@@ -29,8 +29,9 @@ struct LandmarksListView: View {
                         LandmarkRowView(landmark: landmark)
                     }
                 }
-                .navigationTitle("Landmarks")
             }
+            .animation(.default, value: favoriteLandmarks)
+            .navigationTitle("Landmarks")
         } detail: {
             Text("Select a Landmark")
         }
@@ -38,6 +39,6 @@ struct LandmarksListView: View {
 }
 
 #Preview {
-    LandmarksListView()
+    LandmarkListView()
         .environment(DataStore())
 }
