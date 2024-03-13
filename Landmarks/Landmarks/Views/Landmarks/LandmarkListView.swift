@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct LandmarkListView: View {
-    @Environment(DataStore.self) var landmarkDataStore
+    @Environment(DataStore.self) var dataStore
     @State private var showFavoritesOnly: Bool = false
     @State private var filter = FilterCategory.all
+    @State private var selectedLandmark: Landmark?
 
     enum FilterCategory: String, CaseIterable, Identifiable {
         case all = "All"
@@ -22,7 +23,7 @@ struct LandmarkListView: View {
     }
 
     var favoriteLandmarks: [Landmark] {
-        landmarkDataStore.landmarks
+        dataStore.landmarks
             .filter { (!showFavoritesOnly || $0.isFavorite)
                 && (filter == .all || filter.rawValue == $0.category.rawValue)
             }
@@ -33,15 +34,22 @@ struct LandmarkListView: View {
         return showFavoritesOnly ? "Favorite \(title)" : title
     }
 
+    var index: Int? {
+        dataStore.landmarks.firstIndex(where: { $0.id == selectedLandmark?.id })
+    }
+
     var body: some View {
+        @Bindable var dataStore = dataStore
+
         NavigationSplitView {
-            List {
+            List(selection: $selectedLandmark) {
                 ForEach(favoriteLandmarks) { landmark in
                     NavigationLink {
                         LandmarkDetailView(landmark: landmark)
                     } label: {
                         LandmarkRowView(landmark: landmark)
                     }
+                    .tag(landmark)
                 }
             }
             .animation(.default, value: favoriteLandmarks)
@@ -68,6 +76,7 @@ struct LandmarkListView: View {
         } detail: {
             Text("Select a Landmark")
         }
+        .focusedValue(\.selectedLandmark, $dataStore.landmarks[index ?? 0])
     }
 }
 
